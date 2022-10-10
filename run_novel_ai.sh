@@ -59,10 +59,8 @@ else
 fi
 
 # download moel
-fileid="1I2jJJ5srFmhWGwc0RecvtrvR5puSR9jA"
 filename="model.zip"
-html=`curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}"`
-curl -Lb ./cookie "https://drive.google.com/uc?export=download&`echo ${html}|grep -Po '(confirm=[a-zA-Z0-9\-_]+)'`&id=${fileid}" -o ${filename}
+curl -Lb ./cookie "https://www.dropbox.com/s/kf6cp7g97ooe1jf/models.zip?dl=0" -o ${filename}
 unzip -o model.zip -d /content/webui/stable-diffusion-webui/
 
 printf "\n%s\n" "${delimiter}"
