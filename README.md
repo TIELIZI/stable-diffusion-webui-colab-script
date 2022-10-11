@@ -58,7 +58,7 @@ for file in info.files():
       pr = info.map_file(file_index, 0, 0)
       pr_next = info.map_file(file_index+1, 0, 0)
       for i in range(info.num_pieces()):
-        if i in range(pr.piece, pr_next.piece):
+        if i in range(pr.piece, pr_next.piece+1):
           handle.piece_priority(i,7)
           
     file_index += 1
