@@ -81,7 +81,7 @@ print("Elapsed Time: ",int((end-begin)//60),"min :", int((end-begin)%60), "sec")
 
 print(datetime.datetime.now())
 
-!mkdir -p /content/webui/stable-diffusion-webui/models/Stable-diffusion/
+!mkdir -p /content/model/
 !mv /content/model/novelaileak/stableckpt/animevae.pt /content/models/Stable-diffusion/final-pruned.vae.pt 
 !mv /content/model/novelaileak/stableckpt/animefull-latest/model.ckpt /content/models/Stable-diffusion/final-pruned.ckpt
 !mv /content/model/novelaileak/stableckpt/modules/modules/ /content/models/hypernetworks
