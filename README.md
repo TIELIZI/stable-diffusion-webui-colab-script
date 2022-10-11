@@ -1,13 +1,16 @@
 # stable-diffusion-webui-colab-script
-## novel ai
+## novel ai部署
 新建colab笔记本，复制并执行以下代码即可
 ```shell
 !git clone https://github.com/TIELIZI/stable-diffusion-webui-colab-script.git
 !sh ./stable-diffusion-webui-colab-script/run_novel_ai.sh
+```
 
-## 模型缺失，can't run without a checkpoint错误
-以上两行代码不包含模型文件下载，可以先执行以下代码下载模型文件（通过torrent下载，可能需要1小时或更长），或者自行上传模型到目录 webui/stable-diffusion-webui/models
-'''shell
+## 模型下载
+以上两行代码不包含模型文件下载，模型文件不存在时，会报 can't run without a checkpoint 错误<br>
+可以先执行以下代码下载模型文件（通过torrent下载，可能需要1小时或更长），或者自行上传模型到目录 webui/stable-diffusion-webui/models
+
+```shell
 !python -m pip install --upgrade pip setuptools wheel
 !python -m pip install lbry-libtorrent
 !wget https://raw.githubusercontent.com/TIELIZI/stable-diffusion-webui-colab-script/main/novelaileak.torrent
@@ -82,3 +85,4 @@ print(datetime.datetime.now())
 !mv /content/model/novelaileak/stableckpt/animevae.pt /content/webui/stable-diffusion-webui/models/Stable-diffusion/final-pruned.vae.pt 
 !mv /content/model/novelaileak/stableckpt/animefull-latest/model.ckpt /content/webui/stable-diffusion-webui/models/Stable-diffusion/final-pruned.ckpt
 !mv /content/model/novelaileak/stableckpt/modules/modules/ /content/webui/stable-diffusion-webui/models/hypernetworks
+```
