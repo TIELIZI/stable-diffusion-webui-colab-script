@@ -64,8 +64,8 @@ fi
 # unzip -o model.zip -d /content/webui/stable-diffusion-webui/
 if [ -d "/content/models/" ]
 then
-    mkidr -p /content/webui/stable-diffusion-webui/models/Stable-diffusion/
-    mkidr -p /content/webui/stable-diffusion-webui/models/hypernetworks/
+    mkdir -p /content/webui/stable-diffusion-webui/models/Stable-diffusion/
+    mkdir -p /content/webui/stable-diffusion-webui/models/hypernetworks/
     mv /content/models/Stable-diffusion/* /content/webui/stable-diffusion-webui/models/Stable-diffusion/
     mv /content/models/hypernetworks/* /content/webui/stable-diffusion-webui/models/hypernetworks/
 fi
