@@ -59,9 +59,14 @@ else
 fi
 
 # download moel
-filename="model.zip"
-curl -Lb ./cookie "https://www.dropbox.com/s/kf6cp7g97ooe1jf/models.zip?dl=0" -o ${filename}
-unzip -o model.zip -d /content/webui/stable-diffusion-webui/
+# filename="model.zip"
+# curl -Lb ./cookie "https://www.dropbox.com/s/kf6cp7g97ooe1jf/models.zip?dl=0" -o ${filename}
+# unzip -o model.zip -d /content/webui/stable-diffusion-webui/
+if [ -d "/content/models/" ]
+then
+    mv /content/models/Stable-diffusion/* /content/webui/stable-diffusion-webui/models/Stable-diffusion/
+    mv /content/models/hypernetworks/* /content/webui/stable-diffusion-webui/models/hypernetworks/
+fi
 
 printf "\n%s\n" "${delimiter}"
 printf "Launching launch.py..."
