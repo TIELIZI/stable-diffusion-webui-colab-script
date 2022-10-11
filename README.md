@@ -33,7 +33,7 @@ print("Starting", handle.name())
 
 file_to_download=[
   "novelaileak/stableckpt/animevae.pt",
-  "novelaileak/stableckpt/animefull-latest/model.ckpt",
+  "novelaileak/stableckpt/animefull-final-pruned/model.ckpt",
   "novelaileak/stableckpt/modules/modules/aini.pt",
   "novelaileak/stableckpt/modules/modules/anime.pt",
   "novelaileak/stableckpt/modules/modules/anime_2.pt",
@@ -83,6 +83,6 @@ print(datetime.datetime.now())
 
 !mkdir -p /content/models/Stable-diffusion/
 !mv /content/model/novelaileak/stableckpt/animevae.pt /content/models/Stable-diffusion/final-pruned.vae.pt 
-!mv /content/model/novelaileak/stableckpt/animefull-latest/model.ckpt /content/models/Stable-diffusion/final-pruned.ckpt
+!mv /content/model/novelaileak/stableckpt/animefull-final-pruned/model.ckpt /content/models/Stable-diffusion/final-pruned.ckpt
 !mv /content/model/novelaileak/stableckpt/modules/modules/ /content/models/hypernetworks
 ```
