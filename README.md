@@ -1,4 +1,7 @@
 # stable-diffusion-webui-colab-script
+## 操作视频
+https://www.bilibili.com/video/BV1UD4y1k7yh
+
 ## novel ai部署
 新建colab笔记本，修改-笔记本设置选GPU，复制并执行以下代码即可
 ```shell
