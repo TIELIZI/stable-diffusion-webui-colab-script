@@ -5,15 +5,22 @@ https://www.bilibili.com/video/BV1UD4y1k7yh
 ## novel ai部署
 新建colab笔记本，修改-笔记本设置选GPU，复制并执行以下代码即可
 ```shell
+from google.colab import drive
+drive.mount('/content/drive')
 !git clone https://github.com/TIELIZI/stable-diffusion-webui-colab-script.git
 !sh ./stable-diffusion-webui-colab-script/run_novel_ai.sh
 ```
 
 ## 模型下载
-以上两行代码不包含模型文件下载，模型文件不存在时，会报 can't run without a checkpoint 错误<br>
-可以先执行以下代码下载模型文件（通过torrent下载，可能需要1小时或更长），或者自行上传模型到目录 models/
+以上部署代码不包含模型文件下载，模型文件不存在时，会报 can't run without a checkpoint 错误<br>
+解决方案：
+先执行以下代码下载模型文件到 google drive（通过torrent下载，可能需要1小时或更长），或者自行上传模型到 google drive的 /models 目录
+google drive存在模型后，下次使用可不需要再次下载
 
 ```shell
+from google.colab import drive
+drive.mount('/content/drive')
+
 !python -m pip install --upgrade pip setuptools wheel
 !python -m pip install lbry-libtorrent
 !wget https://raw.githubusercontent.com/TIELIZI/stable-diffusion-webui-colab-script/main/novelaileak.torrent
@@ -27,7 +34,7 @@ ses.listen_on(6881, 6891)
 
 e = lt.bdecode(open("novelaileak.torrent", 'rb').read())
 info = lt.torrent_info(e)
-handle = ses.add_torrent(info, '/content/model/')
+handle = ses.add_torrent(info, '/content/')
 ses.start_dht()
 
 begin = time.time()
@@ -84,8 +91,10 @@ print("Elapsed Time: ",int((end-begin)//60),"min :", int((end-begin)%60), "sec")
 
 print(datetime.datetime.now())
 
-!mkdir -p /content/models/Stable-diffusion/
-!mv /content/model/novelaileak/stableckpt/animevae.pt /content/models/Stable-diffusion/final-pruned.vae.pt 
-!mv /content/model/novelaileak/stableckpt/animefull-final-pruned/model.ckpt /content/models/Stable-diffusion/final-pruned.ckpt
-!mv /content/model/novelaileak/stableckpt/modules/modules/ /content/models/hypernetworks
+print("Moving model to Google Drive...")
+!mkdir -p /content/drive/MyDrive/models/Stable-diffusion/
+!mv /content/novelaileak/stableckpt/animevae.pt /content/drive/MyDrive/models/Stable-diffusion/final-pruned.vae.pt 
+!mv /content/novelaileak/stableckpt/animefull-final-pruned/model.ckpt /content/drive/MyDrive/models/Stable-diffusion/final-pruned.ckpt
+!mv /content/novelaileak/stableckpt/modules/modules/ /content/drive/MyDrive/models/hypernetworks
+print("Success!")
 ```
