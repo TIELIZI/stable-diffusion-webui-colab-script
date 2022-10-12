@@ -62,12 +62,12 @@ fi
 # filename="model.zip"
 # curl -Lb ./cookie "https://www.dropbox.com/s/kf6cp7g97ooe1jf/models.zip?dl=0" -o ${filename}
 # unzip -o model.zip -d /content/webui/stable-diffusion-webui/
-if [ -d "/content/models/" ]
+if [ -d "/content/drive/MyDrive/models/" ]
 then
     mkdir -p /content/webui/stable-diffusion-webui/models/Stable-diffusion/
     mkdir -p /content/webui/stable-diffusion-webui/models/hypernetworks/
-    mv /content/models/Stable-diffusion/* /content/webui/stable-diffusion-webui/models/Stable-diffusion/
-    mv /content/models/hypernetworks/* /content/webui/stable-diffusion-webui/models/hypernetworks/
+    cp -f /content/drive/MyDrive/models/Stable-diffusion/* /content/webui/stable-diffusion-webui/models/Stable-diffusion/
+    cp -f /content/drive/MyDrive/models/hypernetworks/* /content/webui/stable-diffusion-webui/models/hypernetworks/
 fi
 
 printf "\n%s\n" "${delimiter}"
