@@ -14,7 +14,7 @@ drive.mount('/content/drive')
 ## 模型下载
 以上部署代码不包含模型文件下载，模型文件不存在时，会报 can't run without a checkpoint 错误<br>
 解决方案：
-先执行以下代码下载模型文件到 google drive 的 /models 目录（通过torrent下载，可能需要1小时或更长）<br>
+先执行以下代码，下载模型文件到 google drive 的 /models 目录（通过torrent下载，可能需要1小时或更长）<br>
 google drive存在模型后，下次使用可不需要再次下载
 
 ```shell
