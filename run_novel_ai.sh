@@ -1,5 +1,6 @@
 #!/bin/bash
 # install pythn3.10
+sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt-get install python3.10
 /usr/bin/python3.10 --version
 sudo apt-get install python3.10-distutils && wget https://bootstrap.pypa.io/get-pip.py && /usr/bin/python3.10 get-pip.py
