@@ -67,11 +67,13 @@ if [ -d "/content/drive/MyDrive/models/" ]
 then
     mkdir -p /content/webui/stable-diffusion-webui/models/Stable-diffusion/
     mkdir -p /content/webui/stable-diffusion-webui/models/hypernetworks/
+    mkdir -p /content/webui/stable-diffusion-webui/models/deepboorue/
     cp -f /content/drive/MyDrive/models/Stable-diffusion/* /content/webui/stable-diffusion-webui/models/Stable-diffusion/
     cp -f /content/drive/MyDrive/models/hypernetworks/* /content/webui/stable-diffusion-webui/models/hypernetworks/
+    cp -f /content/drive/MyDrive/models/deepbooru/* /content/webui/stable-diffusion-webui/models/deepbooru/
 fi
 
 printf "\n%s\n" "${delimiter}"
 printf "Launching launch.py..."
 printf "\n%s\n" "${delimiter}"
-"${python_cmd}" "${LAUNCH_SCRIPT}"  --share
+COMMANDLINE_ARGS="--share --gradio-debug --deepdanbooru" REQS_FILE="requirements.txt" /usr/bin/python3.10 launch.py
