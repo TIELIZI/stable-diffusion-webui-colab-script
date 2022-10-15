@@ -67,7 +67,7 @@ if [ -d "/content/drive/MyDrive/models/" ]
 then
     mkdir -p /content/webui/stable-diffusion-webui/models/Stable-diffusion/
     mkdir -p /content/webui/stable-diffusion-webui/models/hypernetworks/
-    mkdir -p /content/webui/stable-diffusion-webui/models/deepboorue/
+    mkdir -p /content/webui/stable-diffusion-webui/models/deepbooru/
     cp -f /content/drive/MyDrive/models/Stable-diffusion/* /content/webui/stable-diffusion-webui/models/Stable-diffusion/
     cp -f /content/drive/MyDrive/models/hypernetworks/* /content/webui/stable-diffusion-webui/models/hypernetworks/
     cp -f /content/drive/MyDrive/models/deepbooru/* /content/webui/stable-diffusion-webui/models/deepbooru/
